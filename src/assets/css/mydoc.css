@@ -1,0 +1,30 @@
+body{ background:#f2f4f5;}
+
+.content{max-width:6.4rem; margin:0 auto; margin-bottom:0.8rem;}
+.content .header{width:6.4rem;height:2.84rem; background:#9e9a95;}
+.header h2{width:1.02rem;height:1.02rem; border-radius:50%; margin:0 auto; padding-top: .2rem;}
+.header h2 img{width:100%;}
+.header .user-box{width:1.54rem; font-size:0.25rem; color:#fff; text-align: center; margin:0 auto; margin-top:0.6rem;}
+.user-box a{color:#fff; text-decoration: none; padding: 0 3px;}
+.user-box a:nth-child(1):before {content:""; width: 1px; height: .19rem; background-color:#fff;display: inline-block;margin-left: .58rem; position: absolute; margin-top: 4px;}
+.clear{ margin-top:0.1rem; display: flex;}
+.clear li{height:0.7rem; color:#fff; flex: 1;}
+.header ul li span{height:0.37rem; line-height:0.37rem; text-align:center; display:block; font-size:0.25rem;}
+.header ul li p{ text-align:center; font-size:0.3rem;height:0.32rem; line-height:0.32rem; border-right:1px solid #fff;}
+.header ul li p.end{ border:0;}
+
+.content .docList{width:6.4rem; margin:0 auto; margin-top:0.32rem;}
+.docList ul{ border-top:1px solid #7b7c7c;}
+.docList ul li{ background:#fff;height:0.79rem;line-height: .78rem; border-top:1px solid #bcbbba; border-bottom:1px solid #7b7c7c;}
+.docList ul li span{ font-size: .28rem;}
+
+
+
+
+.docList .ivu-col-span-22 i.ivu-icon{font-size: .5rem;padding: 0 .18rem; vertical-align: middle;}
+.my_cz p{ float:left; font-size:0.25rem;}
+.ivu-col-span-2 i.ivu-icon {font-size: .4rem; padding: 0 .1rem;}
+.coltext,.ivu-col-span-2 i.ivu-icon {vertical-align: middle;}
+
+
+
