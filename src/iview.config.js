@@ -1,5 +1,6 @@
 import Vue from 'vue';
+import Grid from 'iview/src/components/grid';
+import Icon from 'iview/src/components/icon';
 
-import {Grid, Icon} from 'iview';
 Vue.use(Grid);
 Vue.use(Icon);

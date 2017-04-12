@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+      <bloghead v-show="isShowHead"></bloghead>
 
       <router-view></router-view>
       <bottom-nav></bottom-nav>
@@ -11,6 +11,7 @@
 //App.vue入口文件引入需要用到的mapGetters/mapActions 用于监听或者说管理方法还有事件
 
 import {mapGetters, mapActions} from 'vuex';
+import bloghead from './components/Header.vue';
 import bottomNav from './components/BottomNav.vue';
 
 
@@ -18,17 +19,44 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      pathname:''
     }
   },
-  methods:mapActions(['increment', 'decrement']),
-  computed:mapGetters(['count']),
+  methods:{
+      showhead(pathname) {
+          if(pathname === "home" || pathname === "found") {
+              this.$store.dispatch('isshead');
+          } else {
+              this.$store.dispatch('hidehead');
+          }
+      },
+      bottomActive(pathname) {
+        if(pathname === "home") {
+              this.$store.dispatch('homestate');
+          } else if(pathname === "found") {
+              this.$store.dispatch("foundstate");
+          } else if(pathname === "userCenter") {
+              this.$store.dispatch("userstate");
+          }
+      }
+  },
+  mounted(){
+
+      this.pathname = this.$route.name;
+      this.showhead(this.pathname);
+      this.bottomActive(this.pathname);
+  },
+  computed:mapGetters(['count', 'isShowHead']),
   components : {
-      bottomNav
+      bottomNav,
+      bloghead
   },
   watch:{
       $route(to, from) {
-          console.log(to);
+          this.pathname = to.name;
+          this.showhead(this.pathname);
+          this.bottomActive(this.pathname);
       }
   }
 }

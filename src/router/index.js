@@ -13,10 +13,10 @@ import Register from '../components/Register.vue';
 Vue.use(VueRouter);
 const routes = [
     {path:'/', component:Home, redirect:"/home"},
-    {path:'/home', component:Home},
+    {path:'/home', component:Home, name:"home"},
     {path:'/detail', component:Detail},
-    {path:'/found', component:Found},
-    {path:'/userCenter', component:UserCenter},
+    {path:'/found', component:Found, name:"found"},
+    {path:'/userCenter', component:UserCenter, name:"userCenter"},
     {path:'/user-login', component:Login},
     {path:'/user-reg', component:Register},
 

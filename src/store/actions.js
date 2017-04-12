@@ -8,5 +8,20 @@ export default {
     },
     decrement:({commit}) => {
         commit(types['DECREMENT']);
+    },
+    homestate:({commit}) => {
+    	commit(types['HOMESTATE']);
+    },
+    foundstate:({commit}) => {
+    	commit(types['FOUNDSTATE']);
+    },
+    userstate:({commit}) => {
+    	commit(types['USERSTATE']);
+    },
+    isshead:({commit}) => {
+    	commit('headActive');
+    },
+    hidehead:({commit}) => {
+    	commit('hidehead');
     }
 }
