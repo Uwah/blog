@@ -3,18 +3,18 @@
     <footer class="bottom-fixed" id="bottomNav">
 
             <router-link to="/home">
-                <Icon type="ios-home" v-if="homeActive"></Icon>
-                <Icon type="ios-home-outline" v-else></Icon>
+                <!-- <i class="icon iconfont">&#xe685;</i>  --><!-- 字体图标写法 -->
+                <i :class="[icon,iconfont,homeActive?homePress:homeNormal]"></i>
                 <p>首页</p>
             </router-link>
             <router-link to="/found">
-                <Icon type="ios-world" v-if="foundActive"></Icon>
-                <Icon type="ios-world-outline" v-else></Icon>
+                <!-- <i class="icon iconfont">&#xe687;</i> --><!-- 字体图标写法 -->
+                <i :class="[icon,iconfont,foundActive?foundPress:foundNormal]"></i>
                 <p>发现</p>
             </router-link>
             <router-link to="/userCenter">
-                <Icon type="ios-person" v-if="mineActive"></Icon>
-                <Icon type="ios-person-outline" v-else></Icon>
+                <!-- <i class="icon iconfont">&#xe602;</i> --><!-- 字体图标写法 -->
+                <i :class="[icon,iconfont,mineActive?minePress:mineNormal]"></i>
                 <p>我的</p>
             </router-link>
 
@@ -28,7 +28,15 @@ export default {
     name:'bottomNav',
     data() {
         return {
-            msg:"bottomNav"
+            msg:"bottomNav",
+            icon:"icon",
+            iconfont:"iconfont",
+            homePress:"icon-icshouyepress",
+            homeNormal:"icon-icshouyenormal",
+            foundPress:"icon-icfaxianpress",
+            foundNormal:"icon-icfaxiannormal",
+            minePress:"icon-iconwodedianji",
+            mineNormal:"icon-icon_wode"
         }
     },
     computed:mapGetters(['mineActive', 'homeActive', 'foundActive'])
@@ -36,7 +44,8 @@ export default {
 </script>
 
 <style scoped>
-
+    @import '../assets/css/bottomIcon/bottomIcon.css';
+    @import '../assets/css/bottomIcon/iconfont.css';
     @media(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5) {
         .bottom-fixed:before {
             content: " ";
@@ -74,7 +83,7 @@ export default {
             left: 0;
             -webkit-transform:scaleY(0.33);
             transform: scaleY(0.33);
-            border-top: 1px solid #e7e7e7; 
+            border-top: 1px solid #e7e7e7;
         }
     }
     .bottom-fixed {
@@ -90,17 +99,24 @@ export default {
         display: block;
         text-decoration: none;
         text-align: center;
-        padding-top: .02rem;
+        height: .96rem;
+        align-self: flex-start;
     }
     .bottom-fixed p {
         margin: 0;
         padding: 0;
-        font-size: 14px;
+        font-size: .24rem;
+        color: #39f;
 
     }
-    .ivu-icon {
-        font-size: .56rem;
-    }
+    .icon{
+      font-size: .512rem;
+      color:#39f;
+      display: inherit;
+      -webkit-transition: font-size 0.25s ease-out 0s;
+      -moz-transition: font-size 0.25s ease-out 0s;
+      transition: font-size 0.25s ease-out 0s;
 
+    }
 
 </style>

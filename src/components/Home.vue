@@ -1,23 +1,12 @@
 <template>
     <div>
-        <Carousel autoplay :arrow="setting.arrow" :trigger="setting.trigger">
-	        <Carousel-item>
-	            <div class="demo-carousel">1</div>
-	        </Carousel-item>
-	        <Carousel-item>
-	            <div class="demo-carousel">2</div>
-	        </Carousel-item>
-	        <Carousel-item>
-	            <div class="demo-carousel">3</div>
-	        </Carousel-item>
-	        <Carousel-item>
-	            <div class="demo-carousel">4</div>
-	        </Carousel-item>
-    	</Carousel>
+        <Swiper auto height="100px" :list="swiperData">
+
+        </Swiper>
     	<div class="contentList">
     		<div class="cont-items">
     			<router-link to="">
-    				<Row class="items-row">
+    				<!-- <Row class="items-row">
                         <Col span="8">
                         	<img src="../assets/img/news.png" width="100%" height="100%" alt="">
                         </Col>
@@ -30,7 +19,7 @@
                         		<Col span="2">阅读(x)</Col>
                         	</Row>
                         </Col>
-                    </Row>
+                    </Row> -->
     			</router-link>
     		</div>
 
@@ -39,6 +28,7 @@
     </div>
 </template>
 <script>
+  import {Swiper} from 'vux';
 	export default {
 		name:"homes",
 		data(){
@@ -46,9 +36,25 @@
 				setting:{
 					arrow:"naver",
 					trigger:"hover"
-				}
+				},
+        swiperData:[{
+          url: 'javascript:',
+          img: 'https://static.vux.li/demo/1.jpg',
+          title: '送你一朵fua'
+        }, {
+          url: 'javascript:',
+          img: 'https://static.vux.li/demo/2.jpg',
+          title: '送你一辆车'
+        }, {
+          url: 'javascript:',
+          img: 'https://static.vux.li/demo/3.jpg',
+          title: '送你一次旅行'
+        }]
 			}
-		}
+		},
+    components:{
+        Swiper
+    }
 	}
 </script>
 <style>

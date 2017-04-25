@@ -1,7 +1,9 @@
 var path = require('path')
+var vuxLoader = require("vux-loader");
 var webpack = require('webpack')
 
-module.exports = {
+const webpackConfig = {
+
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -31,6 +33,10 @@ module.exports = {
           loader: 'style-loader!css-loader'
       },
       {
+          test: /\.less$/,
+          loader:'style-loader!css-loader!less-loader'
+      },
+      {
           test: /\.(eot|woff|woff2|ttf)$/,
           loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
       },
@@ -46,7 +52,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
-    }
+    },
+    extensions: ['.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
@@ -56,7 +63,9 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
-}
+};
+
+module.exports = vuxLoader.merge(webpackConfig, {plugins:['vux-ui']});
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'

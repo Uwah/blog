@@ -2,7 +2,7 @@ body{ background:#f2f4f5;}
 
 .content{max-width:6.4rem; margin:0 auto; margin-bottom:0.8rem;}
 .content .header{width:6.4rem;height:2.84rem; background:#9e9a95;}
-.header h2{width:1.02rem;height:1.02rem; border-radius:50%; margin:0 auto; padding-top: .2rem;}
+.header h2{width:1.02rem;height:1.02rem; border-radius:50%; margin:0 auto;}
 .header h2 img{width:100%;}
 .header .user-box{width:1.54rem; font-size:0.25rem; color:#fff; text-align: center; margin:0 auto; margin-top:0.6rem;}
 .user-box a{color:#fff; text-decoration: none; padding: 0 3px;}
