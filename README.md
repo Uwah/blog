@@ -1,6 +1,6 @@
-# vuex-demo
+# leung blog
 
-> my vuex demo
+> Leung blog web app project 
 
 ## Build Setup
 
