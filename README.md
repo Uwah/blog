@@ -2,6 +2,8 @@
 
 > Leung blog web app project 
 
+因为喜欢微信的设计风格所以把ui框架换成Vux
+
 ## Build Setup
 
 ``` bash
