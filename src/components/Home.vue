@@ -4,22 +4,22 @@
 
         </Swiper>
     	<div class="contentList">
-    		<div class="cont-items">
+    		<div class="cont-items" :id="data.id" v-for="data in dataList">
     			<router-link to="">
-    				<!-- <Row class="items-row">
-                        <Col span="8">
-                        	<img src="../assets/img/news.png" width="100%" height="100%" alt="">
-                        </Col>
-                        <Col span="16">
-                        	<h5 class="item-title">xxxxx</h5>
-    						<div class="item-detail">details</div>
-                        	<Row class="item-buttom">
-                        		<Col span="20">发布时间</Col>
-                        		<Col span="2">评论(x)</Col>
-                        		<Col span="2">阅读(x)</Col>
-                        	</Row>
-                        </Col>
-                    </Row> -->
+    				<div class="items-row">
+                <div span="8">
+                	<img :src="data.imgUrl" width="100%" height="100%" alt="">
+                </div>
+                <div span="16">
+                	   <h5 class="item-title">{{data.title}}</h5>
+				             <div class="item-detail">{{data.desc}}</div>
+                	   <div> class="item-buttom">
+                		    <div span="20">{{data.time}}</div>
+                		    <div span="2">评论(x)</div>
+                		    <div span="2">阅读(x)</div>
+                	   </div>
+                </div>
+              </div>
     			</router-link>
     		</div>
 
@@ -49,9 +49,24 @@
           url: 'javascript:',
           img: 'https://static.vux.li/demo/3.jpg',
           title: '送你一次旅行'
-        }]
+        }],
+        dataList:[]
 			}
 		},
+    mounted(){
+        this.initHomeList();
+
+    },
+    methods:{
+        initHomeList(){
+            this.$http.get('src/assets/data/home.json').then(res => {
+              
+              this.dataList = res.data.dataList;
+            }).catch(err => {
+                console.error(err);
+            });
+        }
+    },
     components:{
         Swiper
     }

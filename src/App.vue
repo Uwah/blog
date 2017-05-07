@@ -42,7 +42,6 @@ export default {
       }
   },
   mounted(){
-
       this.pathname = this.$route.name;
       this.showhead(this.pathname);
       this.bottomActive(this.pathname);
