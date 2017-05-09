@@ -92,6 +92,7 @@ export default {
         bottom: 0;
         width: 100%;
         height: .96rem;
+        background-color: #fff;
         /*border-top: 1px solid #e7e7e7;*/
     }
     .bottom-fixed a {

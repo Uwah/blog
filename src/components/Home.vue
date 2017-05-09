@@ -5,30 +5,28 @@
         </Swiper>
     	<div class="contentList">
     		<div class="cont-items" :id="data.id" v-for="data in dataList">
-    			<router-link to="">
-    				<div class="items-row">
-                <div span="8">
-                	<img :src="data.imgUrl" width="100%" height="100%" alt="">
-                </div>
-                <div span="16">
-                	   <h5 class="item-title">{{data.title}}</h5>
-				             <div class="item-detail">{{data.desc}}</div>
-                	   <div> class="item-buttom">
-                		    <div span="20">{{data.time}}</div>
-                		    <div span="2">评论(x)</div>
-                		    <div span="2">阅读(x)</div>
-                	   </div>
-                </div>
+    			<router-link to="" class="cont-a">
+    				  <div class="items-img">
+                  <img :src="data.imgUrl" width="100%" height="100%" alt="">
+              </div>
+              <div class="itme-desc">
+                  <h4 class="item-title">{{data.title}}</h4>
+                  <p class="item-detail">{{data.desc}}</p>
+                  <div class="item-buttom">
+                     <span>{{data.time}}</span>
+                     <span>评论({{data.pinglun}})</span>
+                     <span>阅读({{data.read}})</span>
+                  </div>
               </div>
     			</router-link>
     		</div>
-
+        <!-- <Panel :list="dataList" :footer="footTitle"></Panel> -->
     	</div>
 
     </div>
 </template>
 <script>
-  import {Swiper} from 'vux';
+  import {Swiper,Panel} from 'vux';
 	export default {
 		name:"homes",
 		data(){
@@ -50,7 +48,11 @@
           img: 'https://static.vux.li/demo/3.jpg',
           title: '送你一次旅行'
         }],
-        dataList:[]
+        dataList:[],
+        footTitle: {
+            title:"查看更多",
+            src:"https:www.baidu.com"
+        }
 			}
 		},
     mounted(){
@@ -68,11 +70,12 @@
         }
     },
     components:{
-        Swiper
+        Swiper,
+        Panel
     }
 	}
 </script>
-<style>
+<style scoped>
 	.ivu-carousel {
 		width: 100%;
 		height: 3rem;
@@ -83,4 +86,63 @@
 	div.item-buttom {
 		height: 20%;
 	}
+  .cont-a {
+    display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    -webkit-tab-highlight-color:rgba(0,0,0,0);
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+    -webkit-box-align: center;
+    -webkit-align-items:center;
+    align-items: center;
+  }
+  .items-img {
+    margin-right: .14rem;
+    width: 1.03rem;
+    height: 1.03rem;    
+    line-height: 1.03rem; 
+    text-align: center;
+  }
+  .items-img>img {
+    width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+   } 
+  .itme-desc {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    
+    min-width: 0;
+  }
+  .item-title {
+    font-weight: 400;
+    font-size: .27rem;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 0;
+  }
+  .item-detail {
+    color: #999;
+    font-size: .23rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1.2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .item-buttom {
+    font-size: .2rem;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
 </style>
