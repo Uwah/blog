@@ -5,7 +5,7 @@
         </Swiper>
     	<div class="contentList">
     		<div class="cont-items" :id="data.id" v-for="data in dataList">
-    			<router-link to="" class="cont-a">
+    			<router-link :to="{name:'detail',params:{id:data.id}}" class="cont-a">
     				  <div class="items-img">
                   <img :src="data.imgUrl" width="100%" height="100%" alt="">
               </div>
