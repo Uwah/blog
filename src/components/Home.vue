@@ -82,6 +82,9 @@
 	div.item-buttom {
 		height: 20%;
 	}
+  .contentList {
+    margin-bottom: .96rem;
+  }
   .cont-a {
     display: flex;
     display: -webkit-flex;
