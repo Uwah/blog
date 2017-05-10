@@ -48,11 +48,7 @@
           img: 'https://static.vux.li/demo/3.jpg',
           title: '送你一次旅行'
         }],
-        dataList:[],
-        footTitle: {
-            title:"查看更多",
-            src:"https:www.baidu.com"
-        }
+        dataList:[]
 			}
 		},
     mounted(){
@@ -62,7 +58,7 @@
     methods:{
         initHomeList(){
             this.$http.get('src/assets/data/home.json').then(res => {
-              
+
               this.dataList = res.data.dataList;
             }).catch(err => {
                 console.error(err);
@@ -101,20 +97,20 @@
   .items-img {
     margin-right: .14rem;
     width: 1.03rem;
-    height: 1.03rem;    
-    line-height: 1.03rem; 
+    height: 1.03rem;
+    line-height: 1.03rem;
     text-align: center;
   }
   .items-img>img {
     width: 100%;
     max-height: 100%;
     vertical-align: top;
-   } 
+   }
   .itme-desc {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
-    
+
     min-width: 0;
   }
   .item-title {

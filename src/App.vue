@@ -72,5 +72,9 @@ html,body,p,ul,li,table,strong {
 ul>li {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 </style>

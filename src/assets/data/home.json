@@ -11,7 +11,7 @@
 		{"id":"t009","title":"标题9", "desc":"博客文章摘要博客文章摘要博客文章摘要博客文章摘要博客文章摘要","time": "2017-05-05 10:50:53", "imgUrl":"src/assets/img/news.png","pinglun": 45, "read": 399},
 		{"id":"t010","title":"标题10", "desc":"博客文章摘要博客文章摘要博客文章摘要博客文章摘要博客文章摘要","time": "2017-05-05 10:14:33", "imgUrl":"src/assets/img/news.png","pinglun": 102, "read": 39},
 		{"id":"t011","title":"标题11", "desc":"博客文章摘要博客文章摘要博客文章摘要博客文章摘要博客文章摘要","time": "2017-05-05 10:19:23", "imgUrl":"src/assets/img/news.png","pinglun": 11, "read": 788},
-		{"id":"t012","title":"标题12", "desc":"博客文章摘要博客文章摘要博客文章摘要博客文章摘要博客文章摘要","time": "2017-05-05 09:33:12", "imgUrl":".src/assets/img/news.png","pinglun": 112, "read": 304},
+		{"id":"t012","title":"标题12", "desc":"博客文章摘要博客文章摘要博客文章摘要博客文章摘要博客文章摘要","time": "2017-05-05 09:33:12", "imgUrl":"src/assets/img/news.png","pinglun": 112, "read": 304},
 		{"id":"t013","title":"标题13", "desc":"博客文章摘要博客文章摘要博客文章摘要博客文章摘要博客文章摘要","time": "2017-05-05 09:22:13", "imgUrl":"src/assets/img/news.png","pinglun": 32, "read": 78}
 	]
 
