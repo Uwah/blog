@@ -2,7 +2,16 @@
 <div>
     <header-top></header-top>
     <div class="contents">
-        {{msg}}
+        <h3>{{content.title}}</h3>
+        <div class="cont-time">{{content.time}}</div>
+        <section class="cont-desc">
+            {{content.desc}}
+        </section>
+        <div class="cont-bottom">
+            <div class="cont-pinglun">{{content.pinglun}}</div>
+            <div class="cont-zan">{{content.zan}}</div>
+            <div class="cont-read">{{content.read}}</div>
+        </div>
     </div>
 </div>
 </template>
@@ -12,11 +21,15 @@ export default {
     name:"detail",
     data(){
         return {
-            msg:"文章内容"
+            content:{}
         }
     },
     components:{
         headerTop
+    },
+    beforeRouteEnter(to, from, next) {
+        let id = to.params.id;
+        next();
     }
 }
 
@@ -25,5 +38,9 @@ export default {
 .contents {
     margin-top: .68rem;
     font-size: .27rem;
+}
+* {
+    margin: 0;
+    padding: 0;
 }
 </style>
