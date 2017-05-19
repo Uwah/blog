@@ -35,6 +35,11 @@ const mutations = {
     },
     hidehead(state) {
         state.isShowHead = false;
+    },
+    detail(state) {
+        state.homeActive = false;
+        state.foundActive = false;
+        state.mineActive = false;
     }
 };
 

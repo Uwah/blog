@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     @import '../assets/css/bottomIcon/bottomIcon.css';
     @import '../assets/css/bottomIcon/iconfont.css';
     @media(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5) {

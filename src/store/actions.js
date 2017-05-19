@@ -23,5 +23,8 @@ export default {
     },
     hidehead:({commit}) => {
     	commit('hidehead');
+    },
+    detail:({commit}) => {
+        commit('detail');
     }
 }

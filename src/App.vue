@@ -38,6 +38,8 @@ export default {
               this.$store.dispatch("foundstate");
           } else if(pathname === "userCenter") {
               this.$store.dispatch("userstate");
+          } else {
+            this.$store.dispatch("detail");
           }
       }
   },
