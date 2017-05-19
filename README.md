@@ -1,8 +1,13 @@
 # leung blog
 
-> Leung blog web app project 
+> Leung blog web app project
+技术上使用了Vue全家桶 + webpack；
 
-因为喜欢微信的设计风格所以把ui框架换成Vux
+因为喜欢微信的设计风格所以把ui框架换成Vux；
+
+布局采用计算根元素font-size；然后使用rem进行响应式布局。
+
+部分功能尚在开发待完善。。。
 
 ## Build Setup
 
