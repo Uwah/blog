@@ -1,6 +1,7 @@
 # leung blog
 
 > Leung blog web app project
+
 技术上使用了Vue全家桶 + webpack；
 
 因为喜欢微信的设计风格所以把ui框架换成Vux；
