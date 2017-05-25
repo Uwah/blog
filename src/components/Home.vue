@@ -4,7 +4,7 @@
 
         </Swiper>
     	<div class="contentList">
-    		<div class="cont-items" :id="data.id" v-for="data in dataList">
+    		<div class="cont-items" :id="data.id" v-for="data in dataList_c">
     			<router-link :to="{name:'detail',params:{id:data.id}}" class="cont-a">
     				  <div class="items-img">
                   <img :src="data.imgUrl" width="100%" height="100%" alt="">
@@ -48,10 +48,14 @@
           img: 'https://static.vux.li/demo/3.jpg',
           title: '送你一次旅行'
         }],
-        dataList:[]
+        dataList_c:[]
 			}
 		},
     mounted(){
+      // debugger;
+      //   if(dataList === null) {
+
+      //   }
         this.initHomeList();
 
     },
@@ -59,11 +63,16 @@
         initHomeList(){
             this.$http.get('src/assets/data/home.json').then(res => {
 
-              this.dataList = res.data.dataList;
+              this.dataList_c = res.data.dataList;
             }).catch(err => {
                 console.error(err);
             });
         }
+    },
+    computed:{
+      dataList:function() {
+          return this.dataList_c;
+      }
     },
     components:{
         Swiper,

@@ -20,9 +20,21 @@
         </div>
         <div class="docList">
             <group>
-                <cell v-for="blog in cellList" :title="blog.title" is-link>
-                    <i slot="icon" :class="[icon,iconfont,shouchangjia]"></i>
-                    <!-- <img slot="icon" style="display:block;margin-right:5px;" width="20" src="../assets/img/head.png"> -->
+                <cell :title="cellList[0].title" is-link :link="{path:'detail/mineBlog'}">
+                    <i slot="icon" :class="[icon,iconfont,wenzhang, uct]"></i>
+                    <badge :text="cellList[0].count"></badge>
+                </cell>
+                <cell :title="cellList[1].title" is-link :link="{path:'detail/secretBlog'}">
+                    <i slot="icon" :class="[icon,iconfont,secret, uct]"></i>
+                    <badge :text="cellList[1].count"></badge>
+                </cell>
+                <cell :title="cellList[2].title" is-link :link="{path:'detail/cgblog'}">
+                    <i slot="icon" :class="[icon,iconfont,caogaoxiang, uct]"></i>
+                    <badge :text="cellList[2].count"></badge>
+                </cell>
+                <cell :title="cellList[3].title" is-link :link="{path:'detail/scjblog'}">
+                    <i slot="icon" :class="[icon,iconfont,shouchangjia, uct]"></i>
+                    <badge :text="cellList[3].count"></badge>
                 </cell>
             </group>
 
@@ -33,21 +45,25 @@
 <script>
 // import {Cell, Group} from 'vux/src/components';
 import { Group } from 'vux';
-import { Cell } from 'vux';
+import { Cell, Badge } from 'vux';
 export default {
     name:"userCenter",
     data() {
         return {
             cellList:[
-                {title:"我的博文"},
-                {title:"私密博文"},
-                {title:"草稿箱"},
-                {title:"收藏夹"}
+                {title:"我的博文", count: 20, urlType:"mineBlog"},
+                {title:"私密博文", count: 3, urlType:"secretBlog"},
+                {title:"草稿箱", count: 12, urlType:"cgblog"},
+                {title:"收藏夹", count: 9, urlType:"scjblog"}
 
             ],
             icon:"icon",
             iconfont:"iconfont",
-            shouchangjia:"shouchangjia"
+            shouchangjia:"icon-shoucangjia",
+            caogaoxiang:"icon-iconziti43",
+            wenzhang:"icon-iconfontfilesfill",
+            secret:"icon-suo",
+            uct:"uct"
         }
     },
     mounted(){
@@ -55,7 +71,8 @@ export default {
     },
     components:{
         Group,
-        Cell
+        Cell,
+        Badge
     }
 
 }
@@ -63,16 +80,19 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/css/bottomIcon/bottomIcon.css';
 @import '../assets/css/mydoc.css';
-@import '../assets/css/bottomIcon/iconfont.css';
+
 .icon{
       font-size: .32rem;
       color:#333;
+
       display: inherit;
       -webkit-transition: font-size 0.25s ease-out 0s;
       -moz-transition: font-size 0.25s ease-out 0s;
       transition: font-size 0.25s ease-out 0s;
 
     }
+.uct {
+    margin-right: .1rem;
+}
 </style>

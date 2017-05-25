@@ -13,9 +13,9 @@
             <div class="cont-info">{{content.desc}}</div>
         </section>
         <div class="cont-bottom">
-            <span class="cont-pinglun icon iconfont icon-pinglun">评论({{content.pinglun}})</span>
-            <span class="cont-zan icon iconfont icon-zan">赞({{content.zan}})</span>
-            <span class="cont-read icon iconfont icon-yuedu">阅读({{content.read}})</span>
+            <span v-show="content.pinglun" class="cont-pinglun icon iconfont icon-pinglun">评论({{content.pinglun}})</span>
+            <span v-show="content.zan" class="cont-zan icon iconfont icon-zan">赞({{content.zan}})</span>
+            <span v-show="content.read" class="cont-read icon iconfont icon-yuedu">阅读({{content.read}})</span>
         </div>
     </div>
 </div>

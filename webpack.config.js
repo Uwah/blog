@@ -1,6 +1,7 @@
 var path = require('path')
 var vuxLoader = require("vux-loader");
-var webpack = require('webpack')
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const webpackConfig = {
 
