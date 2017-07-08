@@ -43,9 +43,7 @@
 
 </template>
 <script>
-// import {Cell, Group} from 'vux/src/components';
-import { Group } from 'vux';
-import { Cell, Badge } from 'vux';
+import {Group,Cell,Badge } from 'vux';
 export default {
     name:"userCenter",
     data() {

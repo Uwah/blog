@@ -4,12 +4,13 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const webpackConfig = {
-
-  entry: './src/main.js',
+  entry: {
+    build:'./src/main.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -17,9 +18,15 @@ const webpackConfig = {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {
-            loaders: {
-              'scss': 'vue-style-loader!css-loader!sass-loader',
-              'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+            loaders:{
+              css:ExtractTextPlugin.extract({
+                use:['css-loader','autoprefixer-loader'],
+                fallback:'vue-style-loader'
+              }),
+              less:ExtractTextPlugin.extract({
+                use:['css-loader', 'autoprefixer-loader','less-loader'],
+                fallback:'vue-style-loader'
+              }),
             }
           }
       },
@@ -28,14 +35,19 @@ const webpackConfig = {
           loader: 'babel-loader',
           exclude: /node_modules/
       },
-      {   test: /iview.src.*?js$/, loader: 'babel' },
       {
           test: /\.css$/,
-          loader: 'style-loader!css-loader'
+          loader: ExtractTextPlugin.extract({
+              use:['css-loader','autoprefixer-loader'],
+              fallback: 'style-loader'
+          })
       },
       {
           test: /\.less$/,
-          loader:'style-loader!css-loader!less-loader'
+          loader:ExtractTextPlugin.extract({
+            use: ['less-loader','autoprefixer-loader'],
+            fallback: 'style-loader' //'style-loader!css-loader!less-loader'
+          })
       },
       {
           test: /\.(eot|woff|woff2|ttf)$/,
@@ -63,7 +75,10 @@ const webpackConfig = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new ExtractTextPlugin('build.css')
+  ]
 };
 
 module.exports = vuxLoader.merge(webpackConfig, {plugins:['vux-ui']});
@@ -85,6 +100,10 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    })/*,
+    new ExtractTextPlugin({
+       filename:'[name][hash:8].css',
+       allChunks: true
+    })*/
   ])
 }
