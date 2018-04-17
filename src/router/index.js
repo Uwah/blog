@@ -1,24 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../components/Home.vue';
-import Detail from '../components/Detail.vue';
-import Found from '../components/Found.vue';
-import UserCenter from '../components/UserCenter.vue';
-import BottomNav from '../components/BottomNav.vue';
-import Login from '../components/Login.vue';
-import Register from '../components/Register.vue';
-
-
 
 Vue.use(VueRouter);
 const routes = [
-    {path:'/', component:Home, redirect:"/home"},
-    {path:'/home', component:Home, name:"home"},
-    {path:'/detail/:id', component:Detail, name:"detail"},
-    {path:'/found', component:Found, name:"found"},
-    {path:'/userCenter', component:UserCenter, name:"userCenter"},
-    {path:'/user-login', component:Login},
-    {path:'/user-reg', component:Register},
+    {path:'/', component: resolve => require(['../components/Home.vue'], resolve), redirect:"/home"},
+    {path:'/home', component: resolve => require(['../components/Home.vue'], resolve), name:"home"},
+    {path:'/detail/:id', component: resolve => require(['../components/Detail.vue'], resolve), name:"detail"},
+    {path:'/found', component: resolve => require(['../components/Found.vue'], resolve), name:"found"},
+    {path:'/userCenter', component: resolve => require(['../components/UserCenter.vue'], resolve), name:"userCenter"},
+    {path:'/user-login', component: resolve => require(['../components/Login.vue'], resolve), name: 'login'},
+    {path:'/user-reg', component: resolve => require(['../components/Register.vue'], resolve), name: 'register'},
 
 ];
 
